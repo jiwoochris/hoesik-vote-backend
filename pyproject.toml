@@ -1,0 +1,87 @@
+[project]
+name = "ahnlab-voting-backend"
+version = "0.1.0"
+description = "회식 메뉴 투표 백엔드 API"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.22.0",
+    "sqlalchemy>=2.0.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.0.280",
+    "mypy>=1.5.0",
+]
+
+[tool.ruff]
+# 라인 길이 설정
+line-length = 88
+
+# Python 버전 설정
+target-version = "py311"
+
+# 포함할 디렉토리
+include = ["app/**/*.py", "test/**/*.py"]
+
+# 제외할 디렉토리
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "*.egg-info",
+]
+
+[tool.ruff.lint]
+# 활성화할 린팅 규칙
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+
+# 무시할 규칙
+ignore = [
+    "E501",  # line too long (ruff의 line-length가 처리)
+]
+
+[tool.ruff.format]
+# 탭 사용 (프로젝트 가이드라인에 따라)
+indent-style = "tab"
+quote-style = "double"
+
+[tool.mypy]
+# 기본 설정
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+# 모듈 경로
+mypy_path = "app"
+
+# 포함할 파일
+files = ["app", "test"]
+
+# 특정 모듈에 대한 설정
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false

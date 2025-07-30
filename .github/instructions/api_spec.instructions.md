@@ -1,5 +1,5 @@
 ---
-applyTo: "**"
+applyTo: '**'
 ---
 
 # 회식 이벤트별 메뉴 투표 백엔드 API 명세서
@@ -35,8 +35,8 @@ applyTo: "**"
     - Body:
       ```json
       [
-        { "event_id": 1, "name": "2025년 7월 회식" },
-        { "event_id": 2, "name": "2025년 8월 회식" }
+        {"event_id": 1, "name": "2025년 7월 회식"},
+        {"event_id": 2, "name": "2025년 8월 회식"}
       ]
       ```
 
@@ -70,8 +70,8 @@ applyTo: "**"
     - Body:
       ```json
       [
-        { "id": 1, "event_id": 1, "name": "삼겹살" },
-        { "id": 2, "event_id": 1, "name": "치킨" }
+        {"id": 1, "event_id": 1, "name": "삼겹살"},
+        {"id": 2, "event_id": 1, "name": "치킨"}
       ]
       ```
 
@@ -105,8 +105,8 @@ applyTo: "**"
     - Body:
       ```json
       [
-        { "menu_id": 1, "name": "삼겹살", "votes": 5 },
-        { "menu_id": 2, "name": "치킨", "votes": 3 }
+        {"menu_id": 1, "name": "삼겹살", "votes": 5},
+        {"menu_id": 2, "name": "치킨", "votes": 3}
       ]
       ```
 

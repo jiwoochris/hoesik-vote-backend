@@ -33,4 +33,4 @@ source .venv/bin/activate
 
 ## 테스트 및 검증 절차
 
-- 단위 테스트: .venv/bin/pytest -v
+- 테스트: pytest -v

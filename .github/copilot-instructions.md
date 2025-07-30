@@ -38,6 +38,7 @@ source .venv/bin/activate
 3. **import 따라가기**: 문제가 되는 모듈을 import하는 파일을 확인하세요.
 4. **테스트 파일 확인**: 사용 패턴과 기대 동작을 자주 보여줍니다.
 
+
 ## TDD
 
 본 프로젝트는 TDD(Test-Driven Development) 방식을 따릅니다. 새로운 기능을 추가하거나 버그를 수정하기 전에 반드시 테스트 케이스를 먼저 작성해야 하며, 모든 테스트는 `pytest`를 사용하여 실행합니다.
@@ -82,11 +83,3 @@ def test_menu_list_empty():
 ## Testing and Validation
 
 TestClient 를 사용하여 FastAPI 앱을 테스트합니다. 모든 테스트는 `pytest`를 사용하여 실행됩니다.
-
-When performing a code review, respond in Korean.
-
-Commit 메시지는 다음과 같은 형식을 따릅니다:
-매우 짧게 작성합니다.
-```
-<type>(<scope>): <subject>
-```

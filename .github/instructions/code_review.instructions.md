@@ -1,1 +1,0 @@
-review must be in Korean.

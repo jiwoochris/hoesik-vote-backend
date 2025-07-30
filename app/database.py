@@ -1,19 +1,19 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session
-from app.models.event import Base
-from typing import Generator
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./voting.db"
 
 engine = create_engine(
 	SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# DB 테이블 생성
-Base.metadata.create_all(bind=engine)
+Base = declarative_base()
 
-def get_db() -> Generator[Session, None, None]:
+
+def get_db():
+	"""데이터베이스 세션을 제공하는 의존성."""
 	db = SessionLocal()
 	try:
 		yield db
