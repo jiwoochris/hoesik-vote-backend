@@ -1,27 +1,12 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import declarative_base
 
-Base = declarative_base()  # type: ignore
+from app.database import Base
 
 
 class Event(Base):
-    __tablename__ = "events"
+	"""회식 이벤트 모델."""
 
-    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
-    name = Column(String, nullable=False)
+	__tablename__ = "events"
 
-
-class Menu(Base):
-    __tablename__ = "menus"
-
-    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
-    event_id = Column(Integer, nullable=False, index=True)
-    name = Column(String, nullable=False)
-
-
-class Vote(Base):
-    __tablename__ = "votes"
-
-    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
-    event_id = Column(Integer, nullable=False, index=True)
-    menu_id = Column(Integer, nullable=False, index=True)
+	id = Column(Integer, primary_key=True, index=True)
+	name = Column(String, nullable=False)

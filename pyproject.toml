@@ -85,3 +85,6 @@ files = ["app", "test"]
 [[tool.mypy.overrides]]
 module = "tests.*"
 disallow_untyped_defs = false
+
+[dependency-groups]
+dev = []
