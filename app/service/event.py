@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from motor.motor_asyncio import AsyncIOMotorDatabase
 
 from app.repository.event import EventRepository
 from app.schemas.event import EventCreate, EventResponse
@@ -22,21 +22,21 @@ class EventService:
 			시스템에 등록된 모든 이벤트 목록을 조회하여 반환합니다.
 
 	Example:
-		>>> from sqlalchemy.orm import Session
-		>>> event_service = EventService(db_session)
+		>>> from motor.motor_asyncio import AsyncIOMotorDatabase
+		>>> event_service = EventService(db)
 		>>> new_event = EventCreate(name="신년 이벤트")
-		>>> created_event = event_service.create_event(new_event)
-		>>> all_events = event_service.get_all_events()
+		>>> created_event = await event_service.create_event(new_event)
+		>>> all_events = await event_service.get_all_events()
 	"""
-	def __init__(self, db: Session):
+	def __init__(self, db: AsyncIOMotorDatabase):
 		self.repository = EventRepository(db)
 
-	def create_event(self, event: EventCreate) -> EventResponse:
+	async def create_event(self, event: EventCreate) -> EventResponse:
 		"""새로운 이벤트를 생성합니다."""
-		db_event = self.repository.create_event(event)
+		db_event = await self.repository.create_event(event)
 		return EventResponse(event_id=db_event.id, name=db_event.name)
 
-	def get_all_events(self) -> list[EventResponse]:
+	async def get_all_events(self) -> list[EventResponse]:
 		"""모든 이벤트를 조회합니다."""
-		events = self.repository.get_all_events()
+		events = await self.repository.get_all_events()
 		return [EventResponse(event_id=event.id, name=event.name) for event in events]

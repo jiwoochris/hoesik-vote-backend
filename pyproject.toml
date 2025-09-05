@@ -6,9 +6,10 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.100.0",
     "uvicorn[standard]>=0.22.0",
-    "sqlalchemy>=2.0.0",
+    "motor>=3.0.0",
     "pydantic>=2.0.0",
     "httpx>=0.24.0",
+    "pytest-asyncio>=1.1.0",
 ]
 
 [project.optional-dependencies]
@@ -87,4 +88,7 @@ module = "tests.*"
 disallow_untyped_defs = false
 
 [dependency-groups]
-dev = []
+dev = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+]

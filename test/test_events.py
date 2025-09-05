@@ -29,7 +29,7 @@ def test_create_and_get_single_event(client: TestClient):
 	# Then: 201 Created 상태와 올바른 응답이 반환된다
 	assert create_response.status_code == 201
 	created_event = create_response.json()
-	assert created_event["event_id"] == 1
+	assert created_event["event_id"] == "1"
 	assert created_event["name"] == "2025년 7월 회식"
 
 	# When: 이벤트 목록 조회 API를 호출한다
@@ -39,7 +39,7 @@ def test_create_and_get_single_event(client: TestClient):
 	assert get_response.status_code == 200
 	events = get_response.json()
 	assert len(events) == 1
-	assert events[0]["event_id"] == 1
+	assert events[0]["event_id"] == "1"
 	assert events[0]["name"] == "2025년 7월 회식"
 
 
@@ -64,7 +64,7 @@ def test_create_multiple_events_and_get_all(client: TestClient):
 	# Then: 각 이벤트가 올바르게 생성되었는지 확인한다
 	assert len(created_events) == 3
 	for i, created_event in enumerate(created_events):
-		assert created_event["event_id"] == i + 1
+		assert created_event["event_id"] == str(i + 1)
 		assert created_event["name"] == events_data[i]["name"]
 
 	# When: 전체 이벤트 목록을 조회한다
@@ -77,5 +77,5 @@ def test_create_multiple_events_and_get_all(client: TestClient):
 	
 	# 생성 순서대로 정렬되어 반환되는지 확인
 	for i, event in enumerate(all_events):
-		assert event["event_id"] == i + 1
+		assert event["event_id"] == str(i + 1)
 		assert event["name"] == events_data[i]["name"]

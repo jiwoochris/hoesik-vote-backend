@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
+from typing import Union
 
 
 class EventCreate(BaseModel):
@@ -10,8 +11,7 @@ class EventCreate(BaseModel):
 class EventResponse(BaseModel):
 	"""이벤트 응답 스키마."""
 
-	event_id: int
+	event_id: Union[str, int]  # MongoDB ObjectId는 문자열로, 테스트에서는 정수로 처리
 	name: str
 
-	class Config:
-		from_attributes = True
+	model_config = ConfigDict(from_attributes=True)

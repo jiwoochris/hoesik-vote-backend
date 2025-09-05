@@ -1,12 +1,14 @@
-from sqlalchemy import Column, Integer, String
+from pydantic import BaseModel, Field
+from typing import Optional
 
-from app.database import Base
 
-
-class Event(Base):
+class Event(BaseModel):
 	"""회식 이벤트 모델."""
 
-	__tablename__ = "events"
+	id: Optional[str] = Field(default=None, alias="_id")
+	name: str
 
-	id = Column(Integer, primary_key=True, index=True)
-	name = Column(String, nullable=False)
+	model_config = {
+		"populate_by_name": True,
+		"arbitrary_types_allowed": True
+	}
