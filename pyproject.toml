@@ -8,7 +8,6 @@ dependencies = [
     "uvicorn[standard]>=0.22.0",
     "motor>=3.0.0",
     "pydantic>=2.0.0",
-    "httpx>=0.24.0",
 ]
 
 [project.optional-dependencies]
@@ -17,6 +16,7 @@ dev = [
     "pytest-asyncio>=0.21.0",
     "ruff>=0.0.280",
     "mypy>=1.5.0",
+    "httpx>=0.24.0",  # FastAPI TestClient에 필요
 ]
 
 [tool.ruff]
@@ -52,11 +52,12 @@ select = [
 # 무시할 규칙
 ignore = [
     "E501",  # line too long (ruff의 line-length가 처리)
+    "B008",  # FastAPI Depends() 패턴은 허용
 ]
 
 [tool.ruff.format]
-# 탭 사용 (프로젝트 가이드라인에 따라)
-indent-style = "tab"
+# 스페이스 사용 (표준 Python 스타일)
+indent-style = "space"
 quote-style = "double"
 
 [tool.mypy]
@@ -88,6 +89,7 @@ disallow_untyped_defs = false
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
 ]

@@ -1,0 +1,22 @@
+nohup: ignoring input
+INFO:     Will watch for changes in these directories: ['/home/jiwoochris/projects/ahnlab']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [99559] using WatchFiles
+INFO:     Started server process [99561]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:43022 - "POST /api/events HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59862 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59872 - "POST /api/events/68bc30e665eee43c668c455e/menus HTTP/1.1" 201 Created
+INFO:     127.0.0.1:38372 - "POST /api/events/68bc30e665eee43c668c455e/menus HTTP/1.1" 201 Created
+INFO:     127.0.0.1:38380 - "GET /api/events/68bc30e665eee43c668c455e/menus HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59078 - "POST /api/events/68bc30e665eee43c668c455e/votes HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59094 - "POST /api/events/68bc30e665eee43c668c455e/votes HTTP/1.1" 201 Created
+INFO:     127.0.0.1:39056 - "POST /api/events/68bc30e665eee43c668c455e/votes HTTP/1.1" 201 Created
+INFO:     127.0.0.1:39070 - "GET /api/events/68bc30e665eee43c668c455e/results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44342 - "GET /api/events/nonexistent/menus HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [99561]
+INFO:     Stopping reloader process [99559]
