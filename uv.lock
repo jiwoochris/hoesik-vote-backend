@@ -11,7 +11,6 @@ dependencies = [
     { name = "httpx" },
     { name = "motor" },
     { name = "pydantic" },
-    { name = "pytest-asyncio" },
     { name = "uvicorn", extra = ["standard"] },
 ]
 
@@ -37,7 +36,6 @@ requires-dist = [
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.5.0" },
     { name = "pydantic", specifier = ">=2.0.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.4.0" },
-    { name = "pytest-asyncio", specifier = ">=1.1.0" },
     { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.21.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.0.280" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.22.0" },

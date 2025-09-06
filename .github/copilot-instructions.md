@@ -19,8 +19,8 @@ Layered architecture로 구성되어 있으며, 각 계층은 다음과 같은 �
 
 - `app/api/`: FastAPI Routers (프레젠테이션)
 - `app/service/`: 비즈니스 로직 (애플리케이션)
-- `app/repository/`: DB 접근 계층 (SQLite 사용)
-- `app/models/`: SQLAlchemy ORM (도메인)
+- `app/repository/`: DB 접근 계층 (MongoDB 사용)
+- `app/models/`: Pydantic Document 모델 (도메인)
 - `app/schemas/`: Pydantic DTO (전송 객체)
 
 ### 가상 환경
@@ -44,7 +44,7 @@ source .venv/bin/activate
 본 프로젝트는 TDD(Test-Driven Development) 방식을 따릅니다. 새로운 기능을 추가하거나 버그를 수정하기 전에 반드시 테스트 케이스를 먼저 작성해야 하며, 모든 테스트는 `pytest`를 사용하여 실행합니다.
 
 - 항상 "Red - Green - Refactor" 순서로 개발을 진행하세요.
-- 최대한 다양한 유저 스토리를 반영해 구체적으로 테스트 케이스를 작성합니다.
+- 최대한 유저 시나리오를 기반으로 구체적으로 테스트 케이스를 작성합니다.
 - Test 함수명 아래에 docstring을 작성하여 테스트의 목적과 기대 결과를 명확히 합니다.
 - conftest.py에 fixture(autouse=True)를 사용하여 테스트 전후에 필요한 초기화 작업을 수행합니다.
 - 아래와 같이 Given-When-Then 패턴을 사용하여 테스트 케이스를 작성합니다.
