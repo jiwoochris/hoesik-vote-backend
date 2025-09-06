@@ -35,16 +35,28 @@ docker rm mongodb
 ### 애플리케이션 실행
 
 ```bash
-# 의존성 설치
-uv sync
+# 가상환경 생성
+python3 -m venv .venv
+
+# 가상환경 활성화
+source .venv/bin/activate
+
+# 기본 패키지 설치
+pip install -r requirements.txt
+
+# 개발 패키지 설치 (옵션)
+pip install -r requirements-dev.txt
 
 # 개발 서버 실행
-uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### 테스트 실행
 
 ```bash
+# 가상환경 활성화 (필요시)
+source .venv/bin/activate
+
 # 모든 테스트 실행
-uv run pytest
+python -m pytest
 ```
