@@ -10,13 +10,35 @@
 
 ## 개발 환경 설정
 
+### 환경 변수 설정
+
+프로젝트 실행 전에 환경 변수를 설정해야 합니다.
+
+```bash
+# .env.example 파일을 복사하여 .env 파일 생성
+cp .env.example .env
+
+# 필요에 따라 .env 파일의 설정값을 수정
+# 특히 MongoDB 포트 번호나 데이터베이스 이름을 확인하세요
+```
+
+`.env` 파일 예시:
+```env
+# MongoDB 설정
+MONGODB_URL=mongodb://localhost:27777
+DATABASE_NAME=voting_db
+
+# 애플리케이션 환경
+ENVIRONMENT=development
+```
+
 ### MongoDB 설치 및 실행
 
 #### Docker를 사용하는 경우 (권장)
 
 ```bash
 # 간단한 개발용 (인증 없음)
-docker run -d --name mongodb -p 27017:27017 mongo:latest
+docker run -d --name mongodb -p 27777:27017 mongo:latest
 ```
 
 #### 컨테이너 관리
