@@ -27,15 +27,6 @@ cp .env.example .env
 # MongoDB 설정
 # MongoDB 연결 URI (포트와 데이터베이스 이름 포함)
 MONGODB_URI=mongodb://localhost:27777/voting_db
-
-# 애플리케이션 환경 설정
-# 가능한 값: development, production, testing
-ENVIRONMENT=development
-
-# FastAPI 설정 (선택사항)
-APP_TITLE=회식 메뉴 투표 API
-APP_VERSION=1.0.0
-DEBUG=true
 ```
 
 ### MongoDB 설치 및 실행
