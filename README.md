@@ -55,7 +55,7 @@ docker rm mongodb
 
 ```bash
 # 가상환경 생성
-python3 -m venv .venv
+python -m venv .venv
 
 # 가상환경 활성화
 source .venv/bin/activate
