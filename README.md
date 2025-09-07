@@ -24,7 +24,6 @@ cp .env.example .env
 
 `.env` 파일 예시:
 ```env
-# MongoDB 설정
 # MongoDB 연결 URI (포트와 데이터베이스 이름 포함)
 MONGODB_URI=mongodb://localhost:27777/voting_db
 ```
@@ -35,7 +34,7 @@ MONGODB_URI=mongodb://localhost:27777/voting_db
 
 ```bash
 # 간단한 개발용 (인증 없음)
-docker run -d --name mongodb -p 27777:27017 mongo:latest
+docker run -d --name mongodb-test -p 27777:27017 mongo:latest
 ```
 
 #### 컨테이너 관리
@@ -55,7 +54,7 @@ docker rm mongodb
 
 ```bash
 # 가상환경 생성
-python3 -m venv .venv
+python -m venv .venv
 
 # 가상환경 활성화
 source .venv/bin/activate
