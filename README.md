@@ -26,16 +26,16 @@ cp .env.example .env
 ```env
 # MongoDB 설정
 # MongoDB 연결 URI (포트와 데이터베이스 이름 포함)
-MONGODB_URI=mongodb://localhost:27777/voting_db
+MONGODB_URI=mongodb://localhost:27017/voting_db
 ```
 
 ### MongoDB 설치 및 실행
 
-#### Docker를 사용하는 경우 (권장)
+#### Docker를 사용하는 경우
 
 ```bash
 # 간단한 개발용 (인증 없음)
-docker run -d --name mongodb -p 27777:27017 mongo:latest
+docker run -d --name mongodb -p 27017:27017 mongo:latest
 ```
 
 #### 컨테이너 관리
@@ -50,6 +50,13 @@ docker start mongodb
 # 컨테이너 삭제
 docker rm mongodb
 ```
+
+#### MongoDB 직접 설치
+
+Docker 없이 MongoDB를 직접 설치하려는 경우:
+
+- **Ubuntu (WSL)**: [MongoDB Ubuntu 설치 가이드](https://www.mongodb.com/ko-kr/docs/manual/tutorial/install-mongodb-on-ubuntu/)
+- **Windows**: [MongoDB Windows 설치 가이드](https://www.mongodb.com/ko-kr/docs/manual/tutorial/install-mongodb-on-windows/)
 
 ### 애플리케이션 실행
 

@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     
     # MongoDB 설정
     mongodb_uri: str = Field(
-        default="mongodb://localhost:27777/voting_db",
+        default="mongodb://localhost:27017/voting_db",
         description="MongoDB 연결 URI (데이터베이스 이름 포함)"
     )
 
