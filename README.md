@@ -62,7 +62,7 @@ Docker 없이 MongoDB를 직접 설치하려는 경우:
 
 ```bash
 # 가상환경 생성
-python -m venv .venv
+python3 -m venv .venv
 
 # 가상환경 활성화
 source .venv/bin/activate
