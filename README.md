@@ -74,6 +74,14 @@ pip install -r requirements.txt -r requirements-dev.txt
 python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
+### API 문서 확인
+
+서버 실행 후 다음 URL에서 Swagger UI를 통해 API 문서를 확인할 수 있습니다:
+
+```
+http://localhost:8000/docs
+```
+
 ### 테스트 실행
 
 ```bash
