@@ -65,7 +65,10 @@ Docker 없이 MongoDB를 직접 설치하려는 경우:
 python3 -m venv .venv
 
 # 가상환경 활성화
+# Linux/MacOS
 source .venv/bin/activate
+# Windows
+.venv\Scripts\activate
 
 # 프로덕션 및 개발 패키지 한 번에 설치
 pip install -r requirements.txt -r requirements-dev.txt
@@ -86,7 +89,10 @@ http://localhost:8000/docs
 
 ```bash
 # 가상환경 활성화 (필요시)
+# Linux/MacOS
 source .venv/bin/activate
+# Windows
+.venv\Scripts\activate
 
 # 모든 테스트 실행
 python -m pytest
